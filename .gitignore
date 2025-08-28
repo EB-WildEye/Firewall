@@ -1,0 +1,25 @@
+# Dependency directory
+node_modules/
+
+# Environment variables
+.env
+
+# Generated files
+dist/
+build/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+
+# Editor-specific files
+.vscode/
+
+# Temporary files
+*~
+*.swp
