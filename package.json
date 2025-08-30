@@ -1,13 +1,15 @@
 {
 	"devDependencies": {
+		"@types/pg": "^8.11.6",
+		"@types/winston": "^2.4.4",
 		"typescript": "^5.9.2"
 	},
 	"name": "checkpointproject",
 	"version": "1.0.0",
 	"description": "",
-	"main": "app.js",
+	"main": "dist/app.js",
 	"scripts": {
-		"start": "ts-node dist/app.js",
+		"start": "node dist/app.js",
 		"dev": "nodemon src/app.ts",
 		"build": "tsc -p ."
 	},
@@ -18,8 +20,14 @@
 	"dependencies": {
 		"@types/express": "^5.0.3",
 		"@types/node": "^24.3.0",
+		"dotenv": "^17.2.1",
+		"drizzle-orm": "^0.32.1",
 		"express": "^5.1.0",
+		"joi": "^18.0.1",
 		"nodemon": "^3.1.10",
-		"ts-node": "^10.9.2"
+		"pg": "^8.11.3",
+		"ts-node": "^10.9.2",
+		"winston": "^3.13.1",
+		"zod": "^3.22.4"
 	}
 }

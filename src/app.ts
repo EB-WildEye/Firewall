@@ -1,12 +1,17 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
-import { appendFile } from 'fs';
+import 'dotenv/config';
+import express, { Application, Request, Response } from 'express';
+import firewallRouter from './routes/index';
+import config from './config/env';
 
 const app: Application = express();
 
+app.use(express.json()); // Middleware to parse JSON bodies 
+app.use('/api/firewall', firewallRouter); 
+
 app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!');
+    res.send('Server is up and running!');
 });
 
-app.listen(3003, () => {
-    console.log('Server is running on http://localhost:3003');
+app.listen(config.PORT, () => {
+    console.log(`Server is running on http://localhost:${config.PORT}`);
 });
