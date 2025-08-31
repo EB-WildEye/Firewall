@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { addRules, removeRules } from '../services/firewall';
 import { RuleMode } from '../interfaces/firewall';
 import { createIPRule } from '../controllers/ip.controller';
-import { inspectIPInput } from '../middleware/ipValidation';
+import { inspectIPInput } from '../middleware/routesValidators';
 
 
 const router: Router = Router();
