@@ -2,14 +2,22 @@ import 'dotenv/config';
 import express, { Application, Request, Response } from 'express';
 import firewallRouter from './routes/index';
 import { config } from './config/env';
+import pool from './config/db';
 
 const app: Application = express();
 
 app.use(express.json()); 
 app.use('/api/firewall', firewallRouter); 
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Server is up and running!');
+// app.get('/', (req: Request, res: Response) => {
+//     res.send('Server is up and running!');
+// });
+
+// connect database
+
+app.get('/', async (req: Request, res: Response) => {
+    const result = await pool.query('SELECT NOW()');
+    res.send('database is connected');
 });
 
 app.listen(config.PORT, () => {
